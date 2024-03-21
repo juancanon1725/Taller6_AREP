@@ -24,13 +24,13 @@ Explique como escalaría su arquitectura de seguridad para incorporar nuevos ser
 
 3. Se realiza la compilación y la ejecución del programa.
 
-Servidor 1
+* Servidor 1
 
 `java -cp "target/classes:target/dependency/*" org.example.Servidor1.Main1`
 
 ![Captura de pantalla 2024-03-20 144746](https://github.com/juancanon1725/Taller7_AREP/assets/98672541/97566b57-9393-452f-b431-4479eea8d468)
 
-Servidor 2
+* Servidor 2
 
 `java -cp "target/classes:target/dependency/*" org.example.Servidor2.Main2`
 
