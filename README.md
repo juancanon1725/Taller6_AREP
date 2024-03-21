@@ -38,23 +38,31 @@ Explique como escalaría su arquitectura de seguridad para incorporar nuevos ser
 
 3. Para probar se utiliza el siguiente link en cualquier browser
 
-** https://localhost:5000/local para el Servidor1
+* https://localhost:5000/local para el Servidor1
 
 ![Captura de pantalla 2024-03-20 151304](https://github.com/juancanon1725/Taller7_AREP/assets/98672541/ef7fff08-5b93-4ad1-9a72-a382d347b21c)
 
-** https://localhost:5000/remote
+* https://localhost:5000/remote
 
 ![Captura de pantalla 2024-03-20 151737](https://github.com/juancanon1725/Taller7_AREP/assets/98672541/fe4b2c58-a85c-4b45-8fb8-c6ad3009c67f)
 
-** https://localhost:5001/local para el Servidor2
+* https://localhost:5001/local para el Servidor2
 
 ![Captura de pantalla 2024-03-20 151614](https://github.com/juancanon1725/Taller7_AREP/assets/98672541/c4c394e3-1e9c-4ce1-b85d-6df39d645d3d)
 
-** https://localhost:5001/remote
+* https://localhost:5001/remote
 
 ![Captura de pantalla 2024-03-20 151652](https://github.com/juancanon1725/Taller7_AREP/assets/98672541/18a99c51-b6cf-4a84-b564-ef36ca7c4e3b)
 
 ## AWS
+
+Se debe crear una instancia, despues clonar el repositorio en aws, instalamos mvn, java y git. Ejecutamos en una consola desde la carpeta raiz: mvn clean install.
+
+Para correr los servidores usamos: 
+
+`java -cp "target/classes:target/dependency/*" org.example.Servidor1.Main1` y `java -cp "target/classes:target/dependency/*" org.example.Servidor2.Main2` en consolas distintas de la misma instancia de AWS.
+
+Se muestra el siguiente video de la funcionalidad de ambos servidores desplegaods en AWS:
 
 [Video Explicativo de despliegue en AWS](https://youtu.be/l8F83mi89pA)
 
