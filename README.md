@@ -13,7 +13,7 @@ Explique como escalaría su arquitectura de seguridad para incorporar nuevos ser
 ## Instalación
 
 1. Clonar el repositorio.
-***git clone https://github.com/juancanon1725/Taller7_AREP.git***
+`git clone https://github.com/juancanon1725/Taller7_AREP.git`
 
 ## Ejecución
 
