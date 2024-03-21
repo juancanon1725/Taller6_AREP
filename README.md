@@ -4,32 +4,39 @@ Juan Pablo Poveda Cañon
 
 ## Description
 
+Desarrolle una aplicación Web segura con los siguientes requerimientos:
+
+Debe permitir un acceso seguro desde el browser a la aplicación. Es decir debe garantizar autenticación, autorización e integridad de usuarios.
+Debe tener al menos dos computadores comunicacndose entre ellos y el acceso de servicios remotos debe garantizar: autenticación, autorización e integridad entre los servicios. Nadie puede invocar los servicios si no está autorizado.
+Explique como escalaría su arquitectura de seguridad para incorporar nuevos servicios.
+
 ## Instalación
 
-git clone https://github.com/juancanon1725/Taller7_AREP.git
+1. Clonar el repositorio.
+***git clone https://github.com/juancanon1725/Taller7_AREP.git***
+
+## Ejecución
+
+1. Desde la carpeta Taller7_AREP ejecutar el comando:
+***mvn clean install***
+
+2. Se realiza la compilación y la ejecución del programa.
+
+
+
+## AWS
+
+[Video Explicativo de despliegue en AWS](https://youtu.be/l8F83mi89pA)
 
 
 ## Arquitectura
 
-Se desarrolló una aplicación conforme a la arquitectura sugerida y se desplegó en AWS mediante el uso de EC2 y Docker. La estructura de la aplicación comprende los siguientes elementos:
+La arquitectura representada en la imagen adopta un enfoque de dos capas, divididas en la capa de presentación y la capa de datos. La capa de presentación consta de un navegador web y un servicio de inicio de sesión, mientras que la capa de datos incluye dos servidores: uno para el servicio de inicio de sesión y otro para otros servicios.
 
-* Servicio de MongoDB: Una instancia de MongoDB que se ejecuta en un contenedor Docker dentro de una máquina virtual EC2.
+En el flujo de interacción, el navegador web sirve como punto de entrada para los usuarios. Cuando un usuario realiza una solicitud HTTP, esta se dirige al servicio de inicio de sesión. Este servicio se encarga de autenticar las credenciales del usuario y, si son válidas, emite una respuesta HTTP que incluye un token de autorización. Luego, el navegador web utiliza este token para realizar una nueva solicitud HTTP al otro servidor, que proporciona los datos requeridos.
 
-* LogService: Un servicio REST que recibe cadenas de texto, las guarda en la base de datos y devuelve un objeto JSON con las últimas 10 cadenas almacenadas junto con la fecha de registro.
+Esta arquitectura está meticulosamente diseñada para asegurar la integridad, la autorización y la autenticación tanto a nivel de usuario como de servidor.
 
-* Aplicación Web LogRoundRobin: Esta aplicación web incluye un cliente que permite a los usuarios introducir mensajes. Cada mensaje enviado se dirige al servicio REST, el cual emplea un algoritmo de balanceo de carga Round Robin. Este servicio distribuye el procesamiento del mensaje y la respuesta a tres instancias del servicio LogService.
+Integridad: La integridad de los datos se protege mediante el uso de cifrado SSL/TLS. Todas las comunicaciones entre el navegador web y los servidores se cifran, evitando que terceros puedan interceptar o alterar la información.
 
-## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
