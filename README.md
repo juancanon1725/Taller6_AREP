@@ -62,7 +62,7 @@ Para correr los servidores usamos:
 
 `java -cp "target/classes:target/dependency/*" org.example.Servidor1.Main1` y `java -cp "target/classes:target/dependency/*" org.example.Servidor2.Main2` en consolas distintas de la misma instancia de AWS.
 
-Se muestra el siguiente video de la funcionalidad de ambos servidores desplegaods en AWS:
+Se muestra en el siguiente video de la funcionalidad de ambos servidores desplegados en AWS:
 
 [Video Explicativo de despliegue en AWS](https://youtu.be/l8F83mi89pA)
 
